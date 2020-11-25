@@ -1,5 +1,8 @@
 # Table of contents
 
-* [ECV 2020 - Devops](README.md)
-* [Untitled](untitled.md)
+* [README](README.md)
+
+## Devops
+
+* [ECV 2020 - Devops](devops/ecv-2020-devops.md)
 

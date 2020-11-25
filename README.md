@@ -1,10 +1,4 @@
-# ECV 2020 - Devops
+# README
 
-## Objectif en fin de journée
-
-A partir d'un serveur tout neuf, pouvoir y héberger votre site PHP, avec sa base de données.
-
-Test
-
-
+Ici tous les supports et cours pour l'ECV 2020-2021.
 
