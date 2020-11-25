@@ -7,7 +7,7 @@ A partir d'un serveur tout neuf, pouvoir y héberger votre site PHP, avec sa bas
 ### Prérequis
 
 1. Installer [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-2. Télécharger l'image Debian déjà faite.
+2. Télécharger l'image Debian déjà faite, via [https://gofile.io/d/Pl6uJZ](https://gofile.io/d/Pl6uJZ)
 
 ### Sommaire
 
@@ -34,7 +34,7 @@ A partir d'un serveur tout neuf, pouvoir y héberger votre site PHP, avec sa bas
 ## Installer sa machine virtuelle
 
 {% hint style="info" %}
-Ici c'est plutôt "importer sa machine virtuelle". Je vous fournis une image déjà existante.
+Ici c'est plutôt "importer sa machine virtuelle". Je vous fournis une image déjà existante, vous epargnant l'installation en elle-même.
 {% endhint %}
 
 ### Etape 1 : importer dans Virtualbox
@@ -43,7 +43,7 @@ Ici c'est plutôt "importer sa machine virtuelle". Je vous fournis une image dé
 
 ![Choisir le fichier .ova pr&#xE9;c&#xE9;demment t&#xE9;l&#xE9;charg&#xE9;](../.gitbook/assets/image%20%282%29.png)
 
-![Suivant les capacit&#xE9; de votre machine, vous pouvez changer la RAM et le nombre de CPU pour l&apos;&#xE9;mulation.](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 Suivant les capacité de votre machine, vous pouvez changer la RAM et le nombre de CPU pour l'émulation.
 
