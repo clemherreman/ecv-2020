@@ -7,7 +7,7 @@ A partir d'un serveur tout neuf, pouvoir y héberger votre site PHP, avec sa bas
 ### Prérequis
 
 1. Installer [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-2. Télécharger l'image Debian déjà faite, via [https://gofile.io/d/Pl6uJZ](https://gofile.io/d/Pl6uJZ)
+2. Télécharger l'image Debian déjà faite, déposée sur Teams.
 
 ### Sommaire
 
