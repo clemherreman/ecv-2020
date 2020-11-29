@@ -308,6 +308,81 @@ Bonus : explainshell.com permet de décortiquer une commande.
 Exemple : que fait `ls -alh --color` ? [https://explainshell.com/explain?cmd=ls+-alh+--color](https://explainshell.com/explain?cmd=ls+-alh+--color) 
 {% endhint %}
 
+## Anatomie de HTTP
+
+HTTP est un protocole s'exprimant via texte, et comprenant 2 parties : la requête et la réponse.
+
+### Requête HTTP
+
+La requête HTTP est composée de 3 parties
+
+1. La ligne de requête, obligatoire
+2. Les headers, _quasiment_ optionnels\*
+3. Le body, optionnel.
+
+#### Ligne de requête
+
+```text
+GET /wiki/ECV HTTP/1.1         <==== Ligne de requete
+Host: fr.wikipedia.org         <==== Headers
+Accept-Language: en-US,en
+```
+
+Ici `GET /wiki/ECV HTTP/1.1` est composé de 3 parties : 
+
+* le verbe `GET`
+* l'URI `/wiki/ECV`
+*  le protocole \(il existe plusieurs version de HTTP\) `HTTP/1.1`
+
+#### Headers
+
+Les headers ont toujours la forme &lt;name&gt;: &lt;value&gt;. Les plus courants :
+
+* `Host`: permet au serveur de savoir quel site on cherche à joindre, beaucoup de machines hebergeant plusieurs site avec des noms différents.
+* `Accept-Language`: permet de préciser au serveurs les languages préférés, et leur ordre de priorisation
+* `Accept`: permet de préciser au serveur les formats préférés, et leur ordre de priorisation.
+
+#### Body
+
+Le body est optionnel, et souvent utilisé pour des autres verbes, comme `POST` ou `PUT`. Il est séparé des headers par deux retours à la ligne \(une ligne vide donc\).
+
+```text
+POST /login HTTP/1.1                         <==== Ligne de requete
+Host: myprivatewebsite.org                   
+Content-Type: application/json               <==== Précise le type du body
+                                             <==== Séparation du body.
+{ "username": "student", "password": "ecv" }
+```
+
+### Reponse HTTP
+
+Une réponse est très similaire à une requête. On utilise parfois le terme "message HTTP" pour désigner l'un ou l'autre.
+
+Une réponse est composée également des 3 mêmes parties
+
+1. La ligne de réponse, obligatoire
+2. Les headers, _quasiment_ optionnels\*
+3. Le body, optionnel.
+
+```text
+HTTP/1.1 200 OK
+Date: Sun, 29 Nov 2020 20:18:03 GMT
+Content-type: application/json; charset=UTF-8
+Cache-control: private, s-maxage=0, max-age=0, must-revalidate
+
+{"login_token": "ecv4358ecv3267575ecv"}
+```
+
+La ligne de réponse `HTTP/1.1 200 OK` est composé de 3 parties
+
+* Le protocole de réponse, `HTTP/1.1`normalement identique à celui de la requête, obligatoire
+* Le code de status, `200`, indiquant le succès ou non de la réponse, obligatoire
+* Le message de status, `OK` accompagnant le code, optionnel\* \(mais souvent là\).
+
+### Ressources
+
+* Un bon billet explicatif [https://gavilan.blog/2019/01/03/anatomy-of-an-http-request/](https://gavilan.blog/2019/01/03/anatomy-of-an-http-request/)
+
 ## Installer une stack web
 
 ### Nginx
