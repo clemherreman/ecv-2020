@@ -339,7 +339,7 @@ Ici `GET /wiki/ECV HTTP/1.1` est composé de 3 parties :
 Les headers ont toujours la forme &lt;name&gt;: &lt;value&gt;. Les plus courants :
 
 * `Host`: permet au serveur de savoir quel site on cherche à joindre, beaucoup de machines hebergeant plusieurs site avec des noms différents.
-* `Accept-Language`: permet de préciser au serveurs les languages préférés, et leur ordre de priorisation
+* `Accept-Language`: permet de préciser au serveurs les langages préférés, et leur ordre de priorisation
 * `Accept`: permet de préciser au serveur les formats préférés, et leur ordre de priorisation.
 
 #### Body
@@ -354,7 +354,7 @@ Content-Type: application/json               <==== Précise le type du body
 { "username": "student", "password": "ecv" }
 ```
 
-### Reponse HTTP
+### Réponse HTTP
 
 Une réponse est très similaire à une requête. On utilise parfois le terme "message HTTP" pour désigner l'un ou l'autre.
 
@@ -382,6 +382,7 @@ La ligne de réponse `HTTP/1.1 200 OK` est composé de 3 parties
 ### Ressources
 
 * Un bon billet explicatif [https://gavilan.blog/2019/01/03/anatomy-of-an-http-request/](https://gavilan.blog/2019/01/03/anatomy-of-an-http-request/)
+* Les statuts HTTP : [https://httpstatuses.com/](https://httpstatuses.com/)
 
 ## Installer une stack web
 
@@ -445,13 +446,13 @@ Une seconde erreur, bien pire, consiste à mettre la même chose dans les deux.
 
 Les fichiers de configuration se trouvent dans `/etc/php/7.3/` \(`7.3` car la version de PHP installée est la 7.3\).
 
-* /etc/php/7.3/cli/ : dossier racine de la configuration PHP pour le contexte CLI
-* /etc/php/7.3/fpm/ : dossier racine de la configuration PHP pour le contexte FPM
-* /etc/php/7.3/fpm/php-fpm.conf : fichier racine de la **configuration FPM**.
+* `/etc/php/7.3/cli/` : dossier racine de la configuration PHP pour le contexte CLI
+* `/etc/php/7.3/fpm/` : dossier racine de la configuration PHP pour le contexte FPM
+* `/etc/php/7.3/fpm/php-fpm.conf` : fichier racine de la **configuration FPM**.
 
 Il contient notamment la configuration sur combien de requêtes gérer en parallèle, quelle stratégie pour les processus, etc.
 
-* /etc/php/7.3/fpm/conf.d/ : dossier contenant la configuration PHP dans un contexte FPM
+* `/etc/php/7.3/fpm/conf.d/` : dossier contenant la configuration PHP dans un contexte FPM
 
 {% hint style="warning" %}
 Il s'agit bien de la configuration _PHP_ et non pas _FPM_.
