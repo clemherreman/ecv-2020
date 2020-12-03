@@ -6,3 +6,7 @@
 
 * [ECV 2020 - Devops](devops/ecv-2020-devops.md)
 
+## SQL
+
+* [SQL 101](sql/sql-101.md)
+
