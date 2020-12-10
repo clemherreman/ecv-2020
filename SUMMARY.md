@@ -13,4 +13,5 @@
 ## PHP
 
 * [PHP 101](php/php-101.md)
+* [PHP 102](php/php-102.md)
 
