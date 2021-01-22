@@ -1,4 +1,4 @@
-# ECV 2020 - Devops
+# Devops 101
 
 ## Objectif en fin de journée
 
