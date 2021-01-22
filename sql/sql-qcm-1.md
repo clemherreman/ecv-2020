@@ -58,7 +58,7 @@ Réponse
 ```sql
 SELECT last_name,              , name
 FROM pet
-       owner.id = owner_pet.id
+       owner.id = owner_pet.owner_id
 AND 
 AND pet.age < 3
 ```
