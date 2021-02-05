@@ -228,7 +228,7 @@ class StudentListBis
 
 \* Etant très mauvais mécanicien, des erreurs manifestes peuvent s'être glissées dans cette analogie.
 
-### Exercice :
+### Exercices
 
 E1: Écrire une classe `Rectangle` qui permettra de créer une instance en lui spécifiant une largeur et une longueur.  
 Cette classe fournira 2 méthodes, permettant de calculer le périmètre et l'aire d'une instance de Rectangle.
@@ -249,7 +249,80 @@ Une interface permet l'utilisation de polymorphisme.
 
 E3 : écrire une ou plusieurs interfaces qui seraient communes à `Rectangle` ou `Cercle`
 
+E4: Ecrire une nouvelle classe, représentant une forme, implémentant cette même interface : `TriangleRectangle` ou `Carré`. `Triangle` quelconque pour les plus aventuriers d'entre vous : [https://fr.wikipedia.org/wiki/Formule\_de\_H%C3%A9ron](https://fr.wikipedia.org/wiki/Formule_de_H%C3%A9ron)
+
 ## Polymorphisme
 
-Le polymorphisme 
+Le polymorphisme est un mécanisme en POO qui permet d'utiliser des objets de **classes/types différents** d'une manière unique. De cette façon, il est possible d'écrire une fonction qui pourra recevoir des objets de types différents, mais qui partagent tous quelques chose de commun : soit une interface, _soit une classe parente commune \(on y reviendra\)_.
+
+_Exemple en demo : Shape & Printers._
+
+E5:  On souhaite modéliser un jeu de rôle au tour par tour, permettant à 2 personnages de s'affronter dans un duel à mort.
+
+Un développeur précédent a déjà écrit l'interface suivante, permettant de modéliser les comportements attendu commun à tous les types de personnage.
+
+{% code title="/Personnage.php" %}
+```php
+<?php
+
+
+interface Personnage
+{
+    /**
+     * Retourne le nom du personnage.
+     */
+    public function getName(): string;
+
+    /**
+     * Attaque un ennemi. Change les hp de l'ennemi en fonction de la réussite de l'attaque.
+     * @return int Le montant des dommages infligés à $ennemi
+     */
+    public function attack(Personnage $ennemi): int;
+
+    /**
+     * Enleve des points de vie d'un Personnage.
+     * Les hp d'un Personnage peuvent devenir négatifs, mais ne peuvent être
+     * inférieurs a -15.
+     *
+     * @param int $hpLost Number of Hp lost
+     */
+    public function removeHp(int $hpLost);
+
+    /**
+     * Indique si un Personnage est mort.
+     */
+    public function isDead(): bool;
+}
+```
+{% endcode %}
+
+E5-1: Ecrire les classes adaptées à la description suivante :
+
+> La race de base est Humain. Un Humain inflige une attaque faible mais constante de 3hp. Un humain a, en général, 10hp, sauf Jean-Pierre, qui en a 15. Un humain n'a pas de pouvoir spéciaux, et meurt à 0hp ou moins.
+
+> Les Guerriers sont plus puissants : ils infligent entre 2 et 5hp de dommage, mais parfois se coupent eux-même, emportés par leur frénésie. Ils s'infligent alors 1hp de dommage. Ils sont physiquement forts, et ont 17hp. Un Guerrier peut continuer de se battre si ses hp sont négatifs : après chacun de ses attaque, il a 20% de chance de ne pas être mort, mais de revenir à 1hp.
+
+> Les Magiciens sont plus frêles, mais redoutables : ils attaquent avec des sorts. Chaque magicien a du mana \(entre 3 et 5 points\) et consomme 1 à 2 points de mana aléatoirement pour attaquer, infligeant entre 4 et 6 hp de dommage. Une fois à court de mana, il attaque faiblement avec son baton \(1hp de dommage\). Les magiciens ont 8hp et meurent normalement, excepté Gandalf, qui revient à la vie avec le double de hp s'il meurt. Il change alors de nom et devient Gandalf Le Blanc.
+
+> Les Zombies sont plus fragiles, avec leur 8hp, mais récupérent la moitié des dommages qu'ils infligent après chaque attaque \(entre 1 et 3hp\). De plus, ils sont déjà morts et ne peuvent pas mourir... à moins de leur écraser le cerveau. Ceci ne peut arriver que s'ils ont moins de -5hp, et arrive 50% du temps après une attaque reçue.
+
+{% hint style="info" %}
+L'interface définit les comportements **obligatoires** des classes l'implementant. C'est un **contrat**. Cela ne veut pas dire que les classes n'auront que ces méthodes à implémenter, ni qu'elles n'auront pas d'autres attributs qui leur sont propres.
+{% endhint %}
+
+E5-2 : écrire la classe `Jeu` qui permettra de créer et de suivre le déroulement d'un combat. Cette classe aura une méthode `setAdversaires(Personnage $a1, Personnage $a2)` et fera ensuite combattre chaque Personnage jusqu'à ce que l'un d'entre eux soit mort.
+
+Lors de chaque tour, les statistiques des Personnages seront affichés, ainsi que le montant des dommages infligés.
+
+Ecrire ensuite un fichier `jouer.php` qui créera des personnages, les fera combattre. 
+
+E5-3 : Ajouter un formulaire HTML permettant de choisir le nom et le type des 2 Personnages s'affrontant.
+
+## Héritage
+
+Demo.
+
+## Composition
+
+Demo.
 
