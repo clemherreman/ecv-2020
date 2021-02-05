@@ -241,11 +241,30 @@ class Rectangle
 {
     private float $long;
     private float $larg;
+    private string $color;
+    private string $oldColor;
 
     public function __construct(float $long, float $larg)
     {
         $this->long = $long;
         $this->larg = $larg;
+        $this->color = 'Black';
+    }
+    
+    public function setColor(string $color) 
+    {
+        $this->oldColor = $this->color;
+        $this->color = $color;
+    }
+    
+    public function revertColor()
+    {
+        $this->color = $this->oldColor;
+    }
+    
+    public function getColor(): string
+    {
+        return $this->color;
     }
 
     public function calculPerimetre(): float
@@ -259,15 +278,25 @@ class Rectangle
     }
 }
 
+$rec2 = new Rectangle(); // Error
+$rec3 = new Rectangle(1.2); // Error
+$rec4 = new Rectangle('coucou', 2); // Error 
+
 
 echo "Rectangle 4x5".PHP_EOL;
 $rec = new Rectangle(4, 5);
+$rec->setColor('Pink');
 echo "Perimetre: " . $rec->calculPerimetre(). PHP_EOL;
 echo "Aire: " . $rec->calculAire(). PHP_EOL;
+echo "Couleur: " . $rec->getColor() . PHP_EOL; // 'Pink'
 ```
 {% endcode %}
 
 E2 : Faire la même chose, mais avec une classe `Cercle`
+
+{% hint style="info" %}
+Récupérer la valeur de π en PHP : `pi()`
+{% endhint %}
 
 ## Interface
 
