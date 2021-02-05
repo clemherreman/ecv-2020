@@ -312,6 +312,25 @@ Une interface permet l'utilisation de polymorphisme.
 
 E3 : écrire une ou plusieurs interfaces qui seraient communes à `Rectangle` ou `Cercle`
 
+{% code title="/Interfaces/Shape.php" %}
+```php
+interface Shape
+{
+    /**
+     * Calcule le perimetre de la forme
+     * Ne peut être négatif.
+     */
+    public function calculPerimetre(): float;
+
+    /**
+     * Calcule l'aire de la forme
+     * Ne peut être négatif.
+     */
+    public function calculAire(): float;
+}
+```
+{% endcode %}
+
 E4: Ecrire une nouvelle classe, représentant une forme, implémentant cette même interface : `TriangleRectangle` ou `Carré`. `Triangle` quelconque pour les plus aventuriers d'entre vous : [https://fr.wikipedia.org/wiki/Formule\_de\_H%C3%A9ron](https://fr.wikipedia.org/wiki/Formule_de_H%C3%A9ron)
 
 ## Polymorphisme
