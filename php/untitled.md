@@ -398,13 +398,17 @@ Lors de chaque tour, les statistiques des Personnages seront affichés, ainsi qu
 
 Ecrire ensuite un fichier `jouer.php` qui créera des personnages, les fera combattre. 
 
-E5-3 : Ajouter un formulaire HTML permettant de choisir le nom et le type des 2 Personnages s'affrontant.
+Bonus: E5-3 : Ajouter un formulaire HTML permettant de choisir le nom et le type des 2 Personnages s'affrontant.
 
 ## Héritage
 
-Demo.
+L'héritage est une forme de factorisation de code en POO. Elle consiste à déclarer des classes comme héritant des attributs et des méthodes d'une autre classe. Cela signifie que la classe enfant sera capable, en plus de ses propres méthodes et attributs, d'accéder aux méthodes et attributs de la classe parente - à l'exception des attrbuts et méthodes `private`.
+
+Exemple : Vehicule & Voiture \(demo\).
 
 ## Composition
 
-Demo.
+La composition est une technique, simple mais puissante. Cela consiste à donner comme attribut d'une classe A, une instance d'une classe B. On dit alors que A est composé de B.
+
+Exemple : Moto, Moteur, Pneu & Carburant \(Demo\).
 
