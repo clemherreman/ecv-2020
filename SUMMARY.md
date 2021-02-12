@@ -17,4 +17,5 @@
 * [PHP 102](php/php-102.md)
 * [PHP - TP Secret Santa](php/php-tp-secret-santa.md)
 * [PHP OOP 101](php/untitled.md)
+* [PHP OOP - TP](php/php-oop-tp.md)
 
